@@ -21,14 +21,3 @@ Visit the live site here:
 
 This setup leverages Vite’s fast Hot Module Replacement (HMR) and optimized build system.
 
----
-
-## Project Structure
-
-/src
-├── components/ → Reusable React components (buttons, forms, navbars, etc.)
-├── pages/ → Page layouts and modals
-├── assets/ → Icons, images, celestial effects
-├── styles/ → Global and scoped CSS
-└── App.tsx → Main React app entry point
-
