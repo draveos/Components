@@ -1,12 +1,34 @@
-# React + Vite
+# Components Database
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, celestial-themed React + Vite project that showcases a collection of reusable UI components, complete with animations, glowing effects, and responsive layouts.
 
-Currently, two official plugins are available:
+Literally a **components database**, where you can browse and preview various UI elements such as buttons, forms, navigation bars, cards, modals, and more — all designed for modern web projects.
+These codes will be updated frequently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Demo
 
-## Expanding the ESLint configuration
+Visit the live site here:  
+➡ [https://draveos.github.io/Components/](https://draveos.github.io/Components/)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+- **React** + **Vite**
+- **JavaScript**
+- **Framer Motion** (for animations)
+- **GitHub Pages** (for deployment)
+
+This setup leverages Vite’s fast Hot Module Replacement (HMR) and optimized build system.
+
+---
+
+## Project Structure
+
+/src
+├── components/ → Reusable React components (buttons, forms, navbars, etc.)
+├── pages/ → Page layouts and modals
+├── assets/ → Icons, images, celestial effects
+├── styles/ → Global and scoped CSS
+└── App.tsx → Main React app entry point
+
