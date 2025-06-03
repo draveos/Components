@@ -1,0 +1,210 @@
+.code-modal {
+    width: 100%;
+    max-width: 95vw;
+    max-height: 95vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(30, 27, 75, 0.5);
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+    flex-shrink: 0;
+}
+
+.code-language {
+    padding: 0.25rem 0.75rem;
+    background: rgba(251, 191, 36, 0.2);
+    border: 1px solid rgba(251, 191, 36, 0.4);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #fbbf24;
+    font-weight: 500;
+}
+
+.copy-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(16, 185, 129, 0.2);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    border-radius: 6px;
+    color: #34d399;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover {
+    background: rgba(16, 185, 129, 0.3);
+    border-color: rgba(16, 185, 129, 0.6);
+    transform: translateY(-1px);
+}
+
+.copy-button.copied {
+    background: rgba(16, 185, 129, 0.3);
+    border-color: rgba(16, 185, 129, 0.6);
+}
+
+.copy-icon {
+    font-size: 1rem;
+}
+
+.code-block {
+    flex: 1;
+    overflow-y: auto;
+    background: rgba(15, 23, 42, 0.8);
+    padding: 0;
+    min-height: 0;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 2rem;
+    font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #fef3c7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+.code-block code {
+    color: #fef3c7;
+}
+
+/* Syntax highlighting */
+.code-block pre {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+}
+
+.code-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(254, 243, 199, 0.8);
+    font-size: 0.9rem;
+}
+
+.info-icon {
+    font-size: 1rem;
+}
+
+/* Custom scrollbar for code block */
+.code-block::-webkit-scrollbar {
+    width: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: rgba(251, 191, 36, 0.3);
+    border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+    background: rgba(251, 191, 36, 0.5);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .code-modal {
+        max-width: 98vw;
+        max-height: 98vh;
+    }
+
+    .code-header {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .copy-button {
+        justify-content: center;
+    }
+
+    .code-block pre {
+        padding: 1.5rem;
+        font-size: 0.8rem;
+    }
+
+    .code-info {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-modal {
+        max-width: 99vw;
+        max-height: 99vh;
+    }
+
+    .code-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .code-block pre {
+        padding: 1rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Code syntax highlighting effects */
+.code-block pre::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+    opacity: 0.5;
+}
+
+/* Animation for copy success */
+@keyframes copySuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.copy-button.copied {
+    animation: copySuccess 0.3s ease-out;
+}
