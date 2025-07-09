@@ -1,0 +1,84 @@
+.cosmic-tabs {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.cosmic-tabs__list {
+    display: flex;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+    padding: 0 1.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.cosmic-tabs__list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.cosmic-tabs__button {
+    background: none;
+    border: none;
+    padding: 1rem 1.5rem;
+    color: rgba(254, 243, 199, 0.7);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.cosmic-tabs__button:hover {
+    color: #fef3c7;
+}
+
+.cosmic-tabs__button.active {
+    color: #fbbf24;
+}
+
+.cosmic-tabs__button.active::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #fbbf24;
+    border-radius: 2px 2px 0 0;
+}
+
+.cosmic-tabs__content {
+    padding: 1.5rem;
+}
+
+.cosmic-tabs__panel {
+    color: rgba(254, 243, 199, 0.9);
+    line-height: 1.6;
+}
+
+.cosmic-tabs__panel h4 {
+    color: #fef3c7;
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .cosmic-tabs__list {
+        padding: 0 1rem;
+    }
+
+    .cosmic-tabs__button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .cosmic-tabs__content {
+        padding: 1rem;
+    }
+}

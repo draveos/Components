@@ -1,0 +1,123 @@
+.cosmic-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+}
+
+.cosmic-btn:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+/* Sizes */
+.cosmic-btn--small {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-height: 36px;
+}
+
+.cosmic-btn--medium {
+    padding: 12px 24px;
+    font-size: 1rem;
+    min-height: 44px;
+}
+
+.cosmic-btn--large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    min-height: 52px;
+}
+
+/* Primary variant */
+.cosmic-btn--primary {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.cosmic-btn--primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+}
+
+.cosmic-btn--primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Secondary variant */
+.cosmic-btn--secondary {
+    background: rgba(15, 23, 42, 0.8);
+    color: #fef3c7;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cosmic-btn--secondary:hover:not(:disabled) {
+    border-color: #fbbf24;
+    background: rgba(30, 27, 75, 0.8);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
+}
+
+/* Disabled state */
+.cosmic-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Text */
+.cosmic-btn__text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Ripple effect */
+.cosmic-btn__ripple {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    border-radius: inherit;
+    transition: transform 0.6s ease-out;
+}
+
+.cosmic-btn--clicked .cosmic-btn__ripple {
+    transform: scale(1);
+}
+
+/* Glow effect */
+.cosmic-btn__glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.cosmic-btn--primary:hover:not(:disabled) .cosmic-btn__glow {
+    opacity: 0.3;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}

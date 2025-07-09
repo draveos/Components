@@ -1,0 +1,26 @@
+.cosmic-grid {
+    display: grid;
+    width: 100%;
+}
+
+/* Responsive adjustments for common column counts */
+@media (max-width: 1024px) {
+    .cosmic-grid[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmic-grid[style*="grid-template-columns: repeat(3, 1fr)"],
+    .cosmic-grid[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cosmic-grid[style*="grid-template-columns: repeat(2, 1fr)"],
+    .cosmic-grid[style*="grid-template-columns: repeat(3, 1fr)"],
+    .cosmic-grid[style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: 1fr !important;
+    }
+}

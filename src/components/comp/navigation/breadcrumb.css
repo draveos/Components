@@ -1,0 +1,37 @@
+.cosmic-breadcrumbs {
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.cosmic-breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cosmic-breadcrumbs__item {
+    display: flex;
+    align-items: center;
+}
+
+.cosmic-breadcrumbs__link {
+    color: rgba(254, 243, 199, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.cosmic-breadcrumbs__link:hover {
+    color: #fbbf24;
+}
+
+.cosmic-breadcrumbs__current {
+    color: #fef3c7;
+    font-weight: 600;
+}
+
+.cosmic-breadcrumbs__separator {
+    color: rgba(254, 243, 199, 0.4);
+    margin: 0 0.5rem;
+}

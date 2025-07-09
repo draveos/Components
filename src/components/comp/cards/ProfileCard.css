@@ -1,0 +1,106 @@
+.cosmic-profile-card {
+    position: relative;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+.cosmic-profile-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(251, 191, 36, 0.6);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.cosmic-profile-card__header {
+    position: relative;
+    padding-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cosmic-profile-card__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto;
+    border: 3px solid rgba(254, 243, 199, 0.5);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.cosmic-profile-card__status {
+    position: absolute;
+    bottom: 0;
+    right: calc(50% - 50px + 5px); /* Adjust based on avatar size */
+    width: 20px;
+    height: 20px;
+    background: #22c55e; /* Green for online */
+    border-radius: 50%;
+    border: 3px solid #0f172a;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.cosmic-profile-card__info {
+    padding: 0 1.5rem;
+}
+
+.cosmic-profile-card__name {
+    color: #fef3c7;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cosmic-profile-card__role {
+    color: rgba(254, 243, 199, 0.7);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.cosmic-profile-card__stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cosmic-profile-card__stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cosmic-profile-card__stat-number {
+    color: #fbbf24;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cosmic-profile-card__stat-label {
+    color: rgba(254, 243, 199, 0.6);
+    font-size: 0.8rem;
+}
+
+.cosmic-profile-card__button {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); /* Purple gradient */
+    color: #fef3c7;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cosmic-profile-card__button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+}

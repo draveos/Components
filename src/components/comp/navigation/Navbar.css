@@ -1,0 +1,109 @@
+.cosmic-navbar {
+    background: rgba(15, 23, 42, 0.9);
+    border-bottom: 1px solid rgba(251, 191, 36, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cosmic-navbar__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.cosmic-navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fef3c7;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cosmic-navbar__brand-icon {
+    color: #fbbf24;
+    font-size: 1.8rem;
+}
+
+.cosmic-navbar__toggle {
+    background: none;
+    border: none;
+    color: #fef3c7;
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
+}
+
+.cosmic-navbar__links {
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.cosmic-navbar__link {
+    color: rgba(254, 243, 199, 0.7);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cosmic-navbar__link:hover {
+    color: #fef3c7;
+}
+
+.cosmic-navbar__link.active {
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.cosmic-navbar__link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fbbf24;
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .cosmic-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cosmic-navbar__header {
+        padding-bottom: 1rem;
+    }
+
+    .cosmic-navbar__toggle {
+        display: block; /* Show on mobile */
+    }
+
+    .cosmic-navbar__links {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        padding-top: 0;
+    }
+
+    .cosmic-navbar__links.open {
+        max-height: 200px; /* Adjust as needed */
+        padding-top: 1rem;
+    }
+
+    .cosmic-navbar__link {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 0;
+    }
+}

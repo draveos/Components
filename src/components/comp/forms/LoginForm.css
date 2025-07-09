@@ -1,0 +1,110 @@
+.cosmic-login-form {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 400px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.cosmic-login-form__title {
+    color: #fef3c7;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.cosmic-login-form__group {
+    margin-bottom: 1.5rem;
+}
+
+.cosmic-login-form__input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(30, 27, 75, 0.6);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 8px;
+    color: #fef3c7;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cosmic-login-form__input:focus {
+    outline: none;
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.cosmic-login-form__input::placeholder {
+    color: rgba(254, 243, 199, 0.5);
+}
+
+.cosmic-login-form__input.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.cosmic-login-form__error {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+    text-align: left;
+}
+
+.cosmic-login-form__submit {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border: none;
+    border-radius: 10px;
+    color: #0f172a;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+    margin-top: 1rem;
+}
+
+.cosmic-login-form__submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+}
+
+.cosmic-login-form__footer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cosmic-login-form__link {
+    color: rgba(254, 243, 199, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.cosmic-login-form__link:hover {
+    color: #fbbf24;
+}
+
+.cosmic-login-form__separator {
+    color: rgba(254, 243, 199, 0.4);
+}
+
+@media (max-width: 480px) {
+    .cosmic-login-form {
+        padding: 1.5rem;
+    }
+
+    .cosmic-login-form__title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}

@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { FontIntro } from "./components/FontIntro"
 import { Header } from "./components/Header"
 import { Home } from "./pages/Home"
 import { Database } from "./pages/Database"
@@ -27,10 +26,6 @@ function App() {
             window.removeEventListener("modalClose", handleModalClose)
         }
     }, [])
-
-    if (showIntro) {
-        return <FontIntro onFinish={() => setShowIntro(false)} />
-    }
 
     return (
         <div className="app">

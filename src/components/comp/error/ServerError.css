@@ -1,0 +1,100 @@
+.cosmic-server-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 2rem;
+}
+
+.cosmic-server-error__content {
+    text-align: center;
+    max-width: 500px;
+}
+
+.cosmic-server-error__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s ease-in-out infinite;
+    color: #ef4444;
+}
+
+.cosmic-server-error__code {
+    color: #ef4444;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.cosmic-server-error__title {
+    color: #fef3c7;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cosmic-server-error__message {
+    color: rgba(254, 243, 199, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cosmic-server-error__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cosmic-server-error__btn-retry {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    border: none;
+    border-radius: 8px;
+    color: #0f172a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.cosmic-server-error__btn-retry:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+}
+
+.cosmic-server-error__btn-refresh {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid rgba(71, 85, 105, 0.5);
+    border-radius: 8px;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cosmic-server-error__btn-refresh:hover {
+    border-color: #94a3b8;
+    background: rgba(71, 85, 105, 0.1);
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmic-server-error__code {
+        font-size: 3rem;
+    }
+
+    .cosmic-server-error__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+}

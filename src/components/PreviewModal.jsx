@@ -11,7 +11,6 @@ export function PreviewModal({ isOpen, component, onClose }) {
         } else {
             document.body.style.overflow = "unset"
         }
-
         return () => {
             document.body.style.overflow = "unset"
         }
@@ -31,16 +30,14 @@ export function PreviewModal({ isOpen, component, onClose }) {
                         ✕
                     </button>
                 </div>
-
                 <div className="modal-content">
                     <div className="preview-container">
                         <ComponentPreview component={component} />
                     </div>
                 </div>
-
                 <div className="modal-footer">
                     <div className="component-tags">
-                        {component.tags.map((tag) => (
+                        {component.tags?.map((tag) => (
                             <span key={tag} className="modal-tag">
                 #{tag}
               </span>

@@ -1,0 +1,113 @@
+.database-page {
+    padding: 4rem 2rem;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.database-page__title {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.database-page__title-word {
+    display: inline-block;
+    background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); /* Purple gradient for database */
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0.3rem;
+    animation: titleFloat 4s ease-in-out infinite;
+}
+
+.database-page__subtitle {
+    font-size: 1.25rem;
+    color: rgba(254, 243, 199, 0.8);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.database-page__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.database-page__section {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border */
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.database-page__section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: rgba(139, 92, 246, 0.6);
+}
+
+.database-page__section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #a78bfa; /* Lighter purple */
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.database-page__section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #a78bfa, transparent);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+}
+
+.database-page__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.database-page__list li {
+    color: rgba(254, 243, 199, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    transition: color 0.2s ease;
+}
+
+.database-page__list li:hover {
+    color: #a78bfa;
+}
+
+.database-page__footer {
+    color: rgba(254, 243, 199, 0.6);
+    font-size: 0.9rem;
+}
+
+@keyframes titleFloat {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media (max-width: 768px) {
+    .database-page {
+        padding: 2rem 1rem;
+    }
+
+    .database-page__content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}

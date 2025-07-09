@@ -1,0 +1,9 @@
+.cosmic-fade-in {
+    opacity: 0;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+}
+
+.cosmic-fade-in.visible {
+    opacity: 1;
+}

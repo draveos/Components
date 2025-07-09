@@ -1,0 +1,119 @@
+.cosmic-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.cosmic-modal {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 16px;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.cosmic-modal--small {
+    width: 100%;
+    max-width: 400px;
+}
+
+.cosmic-modal--medium {
+    width: 100%;
+    max-width: 600px;
+}
+
+.cosmic-modal--large {
+    width: 100%;
+    max-width: 800px;
+}
+
+.cosmic-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.cosmic-modal__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fef3c7;
+    margin: 0;
+}
+
+.cosmic-modal__close {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    color: #fca5a5;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cosmic-modal__close:hover {
+    background: rgba(239, 68, 68, 0.3);
+    border-color: rgba(239, 68, 68, 0.6);
+    transform: scale(1.05);
+}
+
+.cosmic-modal__body {
+    padding: 1.5rem 2rem;
+    flex: 1;
+    overflow-y: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmic-modal {
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
+    }
+
+    .cosmic-modal__header {
+        padding: 1rem 1.5rem;
+    }
+
+    .cosmic-modal__body {
+        padding: 1rem 1.5rem;
+    }
+}

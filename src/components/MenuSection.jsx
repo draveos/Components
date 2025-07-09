@@ -1,16 +1,12 @@
 "use client"
 
-export function MenuSection({ title, items, onItemClick }) {
+import "./MenuSection.css"
+
+export function MenuSection({ title, children, className = "" }) {
     return (
-        <div className="menu-section">
-            <h3>{title}</h3>
-            <div className="menu-items">
-                {items.map((item) => (
-                    <button key={item} className="menu-item" onClick={() => onItemClick(item)}>
-                        {item}
-                    </button>
-                ))}
-            </div>
-        </div>
+        <section className={`menu-section ${className}`}>
+            {title && <h2 className="menu-section__title">{title}</h2>}
+            <div className="menu-section__content">{children}</div>
+        </section>
     )
 }

@@ -1,0 +1,51 @@
+.cosmic-chart-container {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border for charts */
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.cosmic-chart-title {
+    color: #fef3c7;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.cosmic-line-chart {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cosmic-line-chart.no-data {
+    color: rgba(254, 243, 199, 0.6);
+    font-size: 1rem;
+}
+
+.cosmic-line-chart svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible; /* Allow circles to extend beyond viewBox */
+}
+
+.cosmic-line-chart__labels {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 40px); /* Adjust for padding in SVG */
+    margin-top: 0.5rem;
+    color: rgba(254, 243, 199, 0.8);
+    font-size: 0.85rem;
+}
+
+.cosmic-line-chart__labels span {
+    transform: translateX(-50%);
+    position: relative;
+}

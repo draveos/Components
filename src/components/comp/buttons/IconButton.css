@@ -1,0 +1,53 @@
+.cosmic-icon-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 10px 18px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    border-radius: 10px;
+    color: #fef3c7;
+    font-weight: 500;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    outline: none;
+}
+
+.cosmic-icon-btn:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+.cosmic-icon-btn:hover {
+    border-color: #fbbf24;
+    background: rgba(30, 27, 75, 0.8);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
+    transform: translateY(-1px);
+}
+
+.cosmic-icon-btn__icon {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.cosmic-icon-btn__text {
+    font-size: 1rem;
+}
+
+.cosmic-icon-btn__glow {
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: inherit;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.cosmic-icon-btn:hover .cosmic-icon-btn__glow {
+    opacity: 0.1;
+}

@@ -1,0 +1,36 @@
+.cosmic-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Max-width variants */
+.cosmic-container--sm {
+    max-width: 640px;
+}
+
+.cosmic-container--md {
+    max-width: 768px;
+}
+
+.cosmic-container--lg {
+    max-width: 1024px;
+}
+
+.cosmic-container--xl {
+    max-width: 1280px;
+}
+
+.cosmic-container--full {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .cosmic-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

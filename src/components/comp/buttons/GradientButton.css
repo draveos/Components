@@ -1,0 +1,47 @@
+.cosmic-gradient-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #4400f1 0%, #a78bfa 100%); /* Purple gradient */
+    border: none;
+    border-radius: 12px;
+    color: #fef3c7;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.cosmic-gradient-btn:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+.cosmic-gradient-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+.cosmic-gradient-btn__text {
+    position: relative;
+    z-index: 2;
+}
+
+.cosmic-gradient-btn__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); /* Yellow/Orange overlay */
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+.cosmic-gradient-btn:hover .cosmic-gradient-btn__overlay {
+    opacity: 0.2;
+}

@@ -1,0 +1,154 @@
+.cosmic-not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 2rem;
+}
+
+.cosmic-not-found__container {
+    text-align: center;
+    max-width: 500px;
+}
+
+.cosmic-not-found__icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.cosmic-not-found__title {
+    color: #fef3c7;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cosmic-not-found__message {
+    color: rgba(254, 243, 199, 0.8);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cosmic-not-found__actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Cosmic Button Base Styles */
+.cosmic-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+}
+
+.cosmic-btn:focus-visible {
+    outline: 2px solid #fbbf24;
+    outline-offset: 2px;
+}
+
+/* Button Sizes */
+.cosmic-btn--small {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    min-height: 36px;
+}
+
+.cosmic-btn--medium {
+    padding: 12px 24px;
+    font-size: 1rem;
+    min-height: 44px;
+}
+
+.cosmic-btn--large {
+    padding: 16px 32px;
+    font-size: 1.125rem;
+    min-height: 52px;
+}
+
+/* Primary Button */
+.cosmic-btn--primary {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #0f172a;
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+.cosmic-btn--primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.4);
+}
+
+.cosmic-btn--primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+.cosmic-btn--secondary {
+    background: rgba(15, 23, 42, 0.8);
+    color: #fef3c7;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cosmic-btn--secondary:hover:not(:disabled) {
+    border-color: #fbbf24;
+    background: rgba(30, 27, 75, 0.8);
+    box-shadow: 0 4px 20px rgba(251, 191, 36, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Disabled State */
+.cosmic-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* NotFound specific button styles */
+.cosmic-not-found__button {
+    min-width: 160px;
+}
+
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .cosmic-not-found__title {
+        font-size: 2rem;
+    }
+
+    .cosmic-not-found__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cosmic-not-found__button {
+        width: 100%;
+        max-width: 250px;
+    }
+}

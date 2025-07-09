@@ -30,7 +30,7 @@ body {
 }
 
 .star {
-  position: absolute;
+  position: fixed;
   width: 2px;
   height: 2px;
   background: #fbbf24;

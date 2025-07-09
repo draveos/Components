@@ -15,46 +15,42 @@
 }
 
 .preview-modal {
-    width: 100%;
-    max-width: 95vw;
-    max-height: 95vh;
     background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    border: 1px solid rgba(251, 191, 36, 0.3);
     border-radius: 16px;
     overflow: hidden;
     animation: slideInUp 0.4s ease-out;
     position: relative;
     display: flex;
     flex-direction: column;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 700px;
 }
 
 .modal-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem 1rem;
+    padding: 1.5rem 2rem;
     border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-    flex-shrink: 0;
 }
 
 .modal-title-section {
-    flex: 1;
+    text-align: left;
 }
 
 .modal-title {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #fef3c7;
-    margin: 0 0 0.5rem 0;
-    background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin: 0;
 }
 
 .modal-subtitle {
-    color: rgba(254, 243, 199, 0.8);
-    margin: 0;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: rgba(254, 243, 199, 0.7);
+    margin-top: 0.25rem;
 }
 
 .modal-close {
@@ -70,7 +66,6 @@
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    flex-shrink: 0;
 }
 
 .modal-close:hover {
@@ -80,29 +75,26 @@
 }
 
 .modal-content {
-    padding: 1.5rem 2rem;
     flex: 1;
     overflow-y: auto;
-    min-height: 0;
-}
-
-.preview-container {
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(251, 191, 36, 0.2);
-    border-radius: 12px;
-    padding: 2rem;
-    min-height: 400px;
+    padding: 1.5rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.preview-container {
     width: 100%;
-    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-footer {
-    padding: 1rem 2rem 1.5rem;
+    padding: 1.5rem 2rem;
     border-top: 1px solid rgba(251, 191, 36, 0.2);
-    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .component-tags {
@@ -113,11 +105,11 @@
 
 .modal-tag {
     padding: 0.25rem 0.75rem;
-    background: rgba(30, 27, 75, 0.6);
-    border: 1px solid rgba(71, 85, 105, 0.5);
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.3);
     border-radius: 20px;
-    font-size: 0.8rem;
-    color: rgba(254, 243, 199, 0.8);
+    font-size: 0.75rem;
+    color: #fbbf24;
 }
 
 @keyframes fadeIn {
@@ -140,88 +132,27 @@
     }
 }
 
-/* Custom scrollbar for modal content */
-.modal-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.modal-content::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.5);
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: rgba(251, 191, 36, 0.3);
-    border-radius: 3px;
-}
-
-.modal-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(251, 191, 36, 0.5);
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
-    .modal-overlay {
-        padding: 0.5rem;
-    }
-
     .preview-modal {
-        max-width: 98vw;
-        max-height: 98vh;
+        margin: 1rem;
+        max-width: calc(100vw - 2rem);
     }
 
-    .modal-header {
-        padding: 1rem 1.5rem 0.75rem;
-        flex-direction: column;
-        gap: 1rem;
-        align-items: stretch;
-    }
-
-    .modal-close {
-        align-self: flex-end;
-    }
-
-    .modal-content {
+    .modal-header,
+    .modal-content,
+    .modal-footer {
         padding: 1rem 1.5rem;
     }
 
-    .preview-container {
-        padding: 1.5rem;
-        min-height: 300px;
-    }
-
-    .modal-footer {
-        padding: 0.75rem 1.5rem 1rem;
-    }
-
     .modal-title {
-        font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-overlay {
-        padding: 0.25rem;
+        font-size: 1.2rem;
     }
 
-    .preview-modal {
-        max-width: 99vw;
-        max-height: 99vh;
+    .modal-subtitle {
+        font-size: 0.8rem;
     }
 
-    .modal-header {
-        padding: 0.75rem 1rem 0.5rem;
-    }
-
-    .modal-content {
-        padding: 0.75rem 1rem;
-    }
-
-    .preview-container {
-        padding: 1rem;
-        min-height: 250px;
-    }
-
-    .modal-footer {
-        padding: 0.5rem 1rem 0.75rem;
+    .component-tags {
+        justify-content: center;
     }
 }

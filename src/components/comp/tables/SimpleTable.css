@@ -1,0 +1,45 @@
+.cosmic-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border for tables */
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cosmic-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensure table is wide enough for content */
+}
+
+.cosmic-table th,
+.cosmic-table td {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+
+.cosmic-table th {
+    background: rgba(30, 27, 75, 0.6);
+    color: #a78bfa; /* Lighter purple for headers */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.cosmic-table td {
+    color: rgba(254, 243, 199, 0.9);
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.cosmic-table tbody tr:hover td {
+    background: rgba(30, 27, 75, 0.8);
+    color: #fef3c7;
+}
+
+.cosmic-table tbody tr:last-child td {
+    border-bottom: none;
+}

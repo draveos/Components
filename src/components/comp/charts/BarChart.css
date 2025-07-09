@@ -1,0 +1,57 @@
+.cosmic-chart-container {
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3); /* Purple border for charts */
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.cosmic-chart-title {
+    color: #fef3c7;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.cosmic-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    width: 100%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(254, 243, 199, 0.2);
+}
+
+.cosmic-bar-chart__bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    flex: 1;
+    margin: 0 0.5rem;
+}
+
+.cosmic-bar-chart__bar {
+    width: 80%;
+    background: linear-gradient(to top, #a78bfa, #8b5cf6); /* Purple gradient for bars */
+    border-radius: 4px 4px 0 0;
+    transition: height 0.5s ease-out;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+.cosmic-bar-chart__bar:hover {
+    filter: brightness(1.2);
+}
+
+.cosmic-bar-chart__label {
+    color: rgba(254, 243, 199, 0.8);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}

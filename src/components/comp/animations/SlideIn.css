@@ -1,0 +1,26 @@
+.cosmic-slide-in {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-timing-function: ease-out;
+}
+
+.cosmic-slide-in--left {
+    transform: translateX(-100%);
+}
+
+.cosmic-slide-in--right {
+    transform: translateX(100%);
+}
+
+.cosmic-slide-in--top {
+    transform: translateY(-100%);
+}
+
+.cosmic-slide-in--bottom {
+    transform: translateY(100%);
+}
+
+.cosmic-slide-in.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
