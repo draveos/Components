@@ -1,0 +1,84 @@
+/* shell wrapper */
+.gravity-shell {
+    position: relative;
+    background: radial-gradient(circle at 50% 0%, #0f0f23 0%, #161629 60%, #070711 100%);
+    border: 2px solid rgba(139,92,246,.35);
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 600px;
+    isolation: isolate;
+}
+
+/* control header */
+.gravity-ui {
+    position: fixed;
+    top: 1rem; left: 50%; transform: translateX(-50%);
+    background: rgba(0,0,0,.55);
+    backdrop-filter: blur(6px);
+    padding: .75rem 1.25rem;
+    border-radius: .75rem;
+    display: flex; gap: .75rem; align-items: center; z-index: 10;
+    font-family: system-ui, sans-serif; color: #e5e7eb;
+}
+.gravity-ui h3   { margin: 0; font-size: 1rem; color: #a78bfa; }
+.gravity-ui .btn {
+    cursor: pointer; border: none; padding: .4rem .9rem; border-radius: .5rem;
+    font-weight: 600; font-size: .85rem; transition: .25s;
+}
+.btn.start { background: linear-gradient(135deg,#10b981,#059669); color:#fff; }
+.btn.stop  { background: linear-gradient(135deg,#ef4444,#dc2626); color:#fff; }
+.btn:hover { transform: translateY(-2px); }
+
+.gravity-ui input[type=range] {
+    accent-color: #8b5cf6; vertical-align: middle; cursor: pointer;
+}
+.readout { display: flex; gap: .75rem; font-variant-numeric: tabular-nums; }
+
+/* scrolling scene */
+.scene { position: relative; width: 100%; height: 200vh; }
+
+/* stars */
+.star {
+    position: absolute; width: 2px; height: 2px; background: #fff; border-radius: 50%;
+    animation: blink 2s linear infinite;
+}
+@keyframes blink { 50% { opacity: .2; } }
+
+/* content blocks */
+.content {
+    width: 80%; max-width: 600px; margin: 40vh auto;
+    padding: 2rem; text-align: center; color: #e5e7eb;
+    background: rgba(255,255,255,.05); border-radius: .75rem;
+    border: 1px solid rgba(139,92,246,.25);
+    backdrop-filter: blur(4px);
+}
+
+/* black-hole */
+.blackhole {
+    position: absolute; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 120px; pointer-events: none;
+}
+.blackhole .core {
+    position: absolute; inset: 30px;
+    background: radial-gradient(circle,#000 0%,#4b0082 60%,transparent 100%);
+    border-radius: 50%; box-shadow: 0 0 40px 15px rgba(0,0,0,.9);
+    animation: core-pulse 3s ease-in-out infinite;
+}
+.blackhole .ring {
+    position: absolute; inset: 0; border-radius: 50%; border: 2px solid rgba(139,92,246,.35);
+    animation: spin 10s linear infinite;
+}
+.r1 { animation-duration: 8s; }
+.r2 { inset: 12px; border-color: rgba(139,92,246,.55); animation-duration: 13s; animation-direction: reverse; }
+@keyframes spin      { to { transform: rotate(360deg); } }
+@keyframes core-pulse{ 50% { transform: scale(1.1); box-shadow: 0 0 60px 20px rgba(0,0,0,.75);} }
+
+/* body modifier */
+body.gravity-on { cursor: grab; }
+body.gravity-on:active { cursor: grabbing; }
+
+/* small screens */
+@media(max-width:768px){
+    .gravity-ui { flex-wrap: wrap; gap: .5rem; }
+    .content    { margin: 50vh auto; }
+}

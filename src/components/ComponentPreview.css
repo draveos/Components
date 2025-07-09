@@ -4,7 +4,6 @@
     justify-content: center;
     min-height: 200px; /* Ensure consistent height for previews */
     width: 100%;
-    background: rgba(30, 27, 75, 0.3);
     border-bottom: 1px solid rgba(251, 191, 36, 0.2);
     padding: 1rem;
     box-sizing: border-box;

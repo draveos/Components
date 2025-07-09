@@ -1,12 +1,11 @@
 "use client"
-
 import { useState } from "react"
 import { componentCategories as categories } from "../component-registry" // Import categories from registry
 import "./Header.css"
 
 export function Header({ selectedCategory, onCategoryChange, currentPage, onPageChange }) {
     const [isExpanded, setIsExpanded] = useState(false)
-    const [hoveredCategory, setHoveredCategory] = useState(null)
+
     const visibleCategories = categories.slice(0, 6)
 
     return (
@@ -18,6 +17,7 @@ export function Header({ selectedCategory, onCategoryChange, currentPage, onPage
                     <div className="corner corner-tr"></div>
                     <div className="corner corner-bl"></div>
                     <div className="corner corner-br"></div>
+
                     <div className="header-content">
                         {/* Logo */}
                         <div className="logo-section clickable" onClick={() => onPageChange("home")}>
@@ -29,6 +29,7 @@ export function Header({ selectedCategory, onCategoryChange, currentPage, onPage
                                 <p className="logo-subtitle">React Component Collection</p>
                             </div>
                         </div>
+
                         {/* Navigation */}
                         <nav className="nav-section">
                             <div className="nav-categories">
@@ -36,21 +37,14 @@ export function Header({ selectedCategory, onCategoryChange, currentPage, onPage
                                     <button
                                         key={category.id}
                                         onClick={() => onCategoryChange(category.id)}
-                                        onMouseEnter={() => setHoveredCategory(category.id)}
-                                        onMouseLeave={() => setHoveredCategory(null)}
                                         className={`nav-button ${selectedCategory === category.id ? "active" : ""}`}
                                     >
                                         <span className="nav-icon">{category.icon}</span>
                                         <span className="nav-text">{category.name}</span>
-                                        {hoveredCategory === category.id && (
-                                            <div className="nav-tooltip">
-                                                {category.description}
-                                                <div className="tooltip-arrow"></div>
-                                            </div>
-                                        )}
                                     </button>
                                 ))}
                             </div>
+
                             <button
                                 onClick={() => setIsExpanded(!isExpanded)}
                                 className={`expand-button ${isExpanded ? "expanded" : ""}`}
@@ -60,6 +54,7 @@ export function Header({ selectedCategory, onCategoryChange, currentPage, onPage
                         </nav>
                     </div>
                 </div>
+
                 {/* Expanded menu */}
                 {isExpanded && (
                     <div className="expanded-menu celestial-border">
@@ -72,7 +67,7 @@ export function Header({ selectedCategory, onCategoryChange, currentPage, onPage
                                         setIsExpanded(false)
                                     }}
                                     className={`expanded-item ${selectedCategory === category.id ? "active" : ""}`}
-                                    style={{ animationDelay: `${index * 0.01}s` }}
+                                    style={{ animationDelay: `${index * 0.05}s` }}
                                 >
                                     <div className="expanded-icon">{category.icon}</div>
                                     <div className="expanded-content">

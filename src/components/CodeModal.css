@@ -15,7 +15,7 @@
 }
 
 .code-modal {
-    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    background: linear-gradient(45deg, #021a2e 0%, #020110 50%,#240740 100% );
     border: 1px solid rgba(251, 191, 36, 0.3);
     border-radius: 16px;
     overflow: hidden;
@@ -127,7 +127,7 @@
 }
 
 .code-block {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(4, 0, 21, 0.71);
     border: 1px solid rgba(71, 85, 105, 0.5);
     border-radius: 8px;
     padding: 1rem;

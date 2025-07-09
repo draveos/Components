@@ -1,0 +1,201 @@
+.dynamic-typography {
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    border-radius: 12px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.typography-controls {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.text-input {
+    background: rgba(251, 191, 36, 0.1);
+    border: 2px solid #fbbf24;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    color: #fef3c7;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 300px;
+}
+
+.text-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+.animation-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.anim-button {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid #8b5cf6;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    color: #c4b5fd;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.anim-button:hover {
+    background: rgba(139, 92, 246, 0.4);
+    transform: translateY(-2px);
+}
+
+.anim-button.active {
+    background: #8b5cf6;
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6);
+}
+
+.typography-display {
+    position: relative;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier New", monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fbbf24;
+    overflow: hidden;
+}
+
+/* Wave Animation */
+.wave .wave-char {
+    display: inline-block;
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Building Animation */
+.building {
+    position: relative;
+}
+
+.building .building-char {
+    position: absolute;
+    bottom: 0;
+    animation: buildUp 1s ease-out forwards;
+    transform: translateY(100px);
+}
+
+@keyframes buildUp {
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Matrix Animation */
+.matrix {
+    background: #000;
+    color: #0f0;
+    font-family: "Courier New", monospace;
+}
+
+.matrix-column {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.matrix-char {
+    position: absolute;
+    animation: matrixFall 3s linear infinite;
+    opacity: 0;
+}
+
+@keyframes matrixFall {
+    0% {
+        opacity: 1;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(350px);
+    }
+}
+
+/* Explosion Animation */
+.explosion {
+    position: relative;
+}
+
+.explosion .explosion-char {
+    position: absolute;
+    animation: explode 2s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(cos(var(--angle)) * var(--distance)), calc(sin(var(--angle)) * var(--distance)))
+        scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Gravity Animation */
+.gravity {
+    position: relative;
+}
+
+.gravity .gravity-char {
+    position: absolute;
+    top: -50px;
+    animation: fall 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(150px) rotate(360deg);
+    }
+}
+
+/* Spiral Animation */
+.spiral {
+    position: relative;
+}
+
+.spiral .spiral-char {
+    position: absolute;
+    animation: spiral 3s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes spiral {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(calc(cos(var(--angle)) * var(--radius)), calc(sin(var(--angle)) * var(--radius)))
+        rotate(var(--angle));
+    }
+}

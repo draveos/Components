@@ -31,7 +31,7 @@ export function NotFound({
                         onClick={handleGoHome}
                         className="cosmic-btn cosmic-btn--primary cosmic-btn--large cosmic-not-found__button"
                     >
-                        Return to Galaxy
+                        Try again?
                     </button>
                     <button
                         onClick={handleGoBack}

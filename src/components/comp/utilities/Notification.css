@@ -1,0 +1,83 @@
+/* ----- 래퍼 ----- */
+.cosmic-notification {
+    position: relative;
+    display: inline-block;
+}
+
+/* ----- 트리거 버튼 ----- */
+.notif-trigger {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.35rem;
+    padding: 0;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.notif-icon {
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.3));
+}
+
+/* ----- 드롭다운 ----- */
+.notif-dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    min-width: 220px;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1px solid rgba(139, 92, 246, 0.35);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+/* 삼각형 꼬리 */
+.notif-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    right: 10px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: transparent transparent rgba(139, 92, 246, 0.35) transparent;
+}
+
+/* ----- 항목 ----- */
+.notif-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.25rem;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+}
+
+.notif-item + .notif-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notif-label {
+    flex: 1;
+    line-height: 1.3;
+}
+
+/* 빈 상태 */
+.notif-empty {
+    color: rgba(254, 243, 199, 0.7);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+/* 접근성: motion 줄이기 */
+@media (prefers-reduced-motion: reduce) {
+    .notif-trigger,
+    .notif-dropdown {
+        transition: none;
+    }
+}

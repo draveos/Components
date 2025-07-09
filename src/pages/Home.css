@@ -17,6 +17,7 @@
     line-height: 1.1;
 }
 
+/* =========== 타이틀 =========== */
 .home__title-word {
     display: inline-block;
     background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fbbf24 100%);
@@ -24,18 +25,73 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin: 0 0.5rem;
-    animation: titleFloat 4s ease-in-out infinite;
+
+    /* 기존 부유 애니 + 글로우 펄스 추가 */
+    text-shadow: 0 0 3px  rgba(255, 255, 255, 0.6),
+    0 0 6px  rgba(253, 224, 71, 0.6),
+    0 0 10px rgba(250, 204, 21, 0.55);
+
+    animation: titleFloat 4s ease-in-out infinite,
+    glowPulse 3s ease-in-out infinite; /* 주기도 조금 더 길게 */
 }
 
 .home__title-word:nth-child(2) {
-    animation-delay: 0.5s;
+    animation-delay: 0.5s, 0.5s;            /* 두 애니메이션 모두 지연 */
 }
 
+/* 글로우 진 ↔ 연 펄스 */
+@keyframes glowPulse {
+    0%, 100% {
+        text-shadow: 0 0 3px  rgba(255,255,255,0.5),
+        0 0 6px  rgba(253,224,71,0.5),
+        0 0 10px rgba(255, 236, 172, 0.45);
+    }
+    50% {
+        text-shadow: 0 0 5px  rgba(255,255,255,0.7),
+        0 0 10px rgba(253,224,71,0.6),
+        0 0 16px rgba(250,204,21,0.55);
+    }
+}
+
+/* =========== 서브타이틀 =========== */
 .home__subtitle {
     font-size: 1.25rem;
-    color: rgba(254, 243, 199, 0.8);
+    color: rgba(254, 243, 199, 0.85);
     margin-bottom: 3rem;
     line-height: 1.6;
+
+    opacity: 0;                     /* 등장 전에 투명 */
+    transform: translateY(10px);    /* 살짝 아래에서 시작 */
+    animation: subtitleFadeIn 1.2s ease-out forwards 0.4s,
+    subtitleWave 6s ease-in-out infinite 2s;
+}
+
+/* 1단계: 서서히 나타나기 */
+@keyframes subtitleFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2단계: 잔잔한 위·아래 물결 */
+@keyframes subtitleWave {
+    0%, 100% { transform: translateY(0);   }
+    50%      { transform: translateY(-6px);}
+}
+
+/* =========== 기존 titleFloat 참고용 =========== */
+@keyframes titleFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+/* 움직임 배려: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    .home__title-word,
+    .home__subtitle {
+        animation: none;
+    }
 }
 
 .home__search {
@@ -144,7 +200,7 @@
 
 .component-card__preview {
     padding: 2rem;
-    background: rgba(30, 27, 75, 0.3);
+    background: rgba(6, 1, 28, 0.68);
     border-bottom: 1px solid rgba(251, 191, 36, 0.2);
     min-height: 200px;
     display: flex;

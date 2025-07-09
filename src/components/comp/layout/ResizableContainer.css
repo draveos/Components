@@ -1,0 +1,57 @@
+.resizable-container {
+    position: relative;
+    margin: 0 auto;
+    min-height: 10px;
+    height: 20%;
+    background: rgba(255,255,255,0.06);
+    border: 1px dashed rgba(139,92,246,0.6);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: width 0.1s ease;
+    user-select: none;
+}
+
+/* inner content wrapper (keeps padding) */
+.resizable-container .content {
+    padding: 2rem;
+    text-align: center;
+    color: #fef3c7;
+}
+
+/* floating breakpoint badge */
+.size-badge {
+    position: absolute;
+    top: 250px;
+    left: 110px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    background: rgba(34,197,94,0.2);
+    border: 1px solid rgba(34,197,94,0.4);
+    color: #bbf7d0;
+    pointer-events: none;
+}
+
+/* drag handle on right edge */
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: -4px;                /* stick out a little */
+    width: 8px;
+    height: 100%;
+    cursor: ew-resize;
+    background: transparent;
+}
+
+.resize-handle::after {       /* visual indicator */
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    width: 2px;
+    height: 40px;
+    transform: translateY(-50%);
+    background: rgba(139,92,246,0.7);
+    border-radius: 1px;
+}

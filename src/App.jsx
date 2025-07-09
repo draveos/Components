@@ -1,13 +1,12 @@
 "use client"
 
+import "./App.css"
 import { useState, useEffect } from "react"
 import { Header } from "./components/Header"
 import { Home } from "./pages/Home"
-import { Database } from "./pages/Database"
-import "./App.css"
+
 
 function App() {
-    const [showIntro, setShowIntro] = useState(true)
     const [currentPage, setCurrentPage] = useState("home")
     const [selectedCategory, setSelectedCategory] = useState("all")
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -54,7 +53,6 @@ function App() {
             </div>
 
             {currentPage === "home" && <Home selectedCategory={selectedCategory} />}
-            {currentPage === "database" && <Database />}
         </div>
     )
 }

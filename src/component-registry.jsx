@@ -17,7 +17,7 @@ import { LoginForm } from "./components/comp/forms/LoginForm"
 import { SearchBar } from "./components/comp/forms/SearchBar"
 import { FileUpload } from "./components/comp/forms/FileUpload"
 
-import { Container } from "./components/comp/layout/Container"
+import { ResizableContainer } from "./components/comp/layout/ResizableContainer"
 import { Grid } from "./components/comp/layout/Grid"
 
 import { Navbar } from "./components/comp/navigation/Navbar"
@@ -36,11 +36,22 @@ import { LineChart } from "./components/comp/charts/LineChart"
 
 import { FadeIn } from "./components/comp/animations/FadeIn"
 import { SlideIn } from "./components/comp/animations/SlideIn"
+import { BounceIn } from "./components/comp/animations/BounceIn"
+import { FlipCard } from "./components/comp/animations/FlipCard"
+import { ParticleSystem } from "./components/comp/animations/ParticleSystem"
+import { TypeWriter } from "./components/comp/animations/TypeWriter"
+import { MorphingShapes } from "./components/comp/animations/MorphingShapes"
+import { CelestialPet } from "./components/comp/animations/CelestialPet"
 
 import { Tooltip } from "./components/comp/utilities/Tooltip"
-import { Badge } from "./components/comp/utilities/Badge"
+import { Notification } from "./components/comp/utilities/Notification.jsx"
 
 import { ExperimentalFeature } from "./components/comp/experimental/Experimental"
+import { DynamicTypography } from "./components/comp/experimental/DynamicTypography"
+import { GravityMode } from "./components/comp/experimental/GravityMode"
+import { DontTouchButton } from "./components/comp/experimental/DontTouchButton"
+import { ColorInverter } from "./components/comp/experimental/ColorInverter"
+
 import { ErrorBoundary } from "./components/comp/error/ErrorBound"
 import { NotFound } from "./components/comp/error/NotFound"
 import { ServerError } from "./components/comp/error/ServerError"
@@ -130,8 +141,8 @@ export const componentCategories = [
                 component: BasicCard,
                 description: "Simple card with title, content, and action",
                 props: {
-                    title: "Cosmic Card",
-                    content: "This card contains stellar information about the universe.",
+                    title: "Example Card",
+                    content: "This card contains stellar information about something.",
                     buttonText: "Explore",
                     onButtonClick: () => console.log("Exploring..."),
                 },
@@ -161,10 +172,10 @@ export const componentCategories = [
                 description: "User profile display card",
                 props: {
                     profile: {
-                        name: "Cosmic Explorer",
-                        role: "Galaxy Navigator",
-                        avatar: "👨‍🚀",
-                        stats: { projects: 42, followers: "1.2k" },
+                        name: "SeJin Kim",
+                        role: "amateur coder",
+                        avatar: ";)",
+                        stats: { projects: 2, followers: "1.2k" },
                         isOnline: true,
                     },
                     onFollow: () => console.log("Following user"),
@@ -223,21 +234,22 @@ export const componentCategories = [
         icon: "📐",
         description: "Structural layout components",
         components: [
-            {
-                name: "Container",
-                component: Container,
-                description: "Responsive content container",
-                props: {
-                    children: (
-                        <div style={{ padding: "2rem", textAlign: "center" }}>
-                            <h3>Container Content</h3>
-                            <p>This content is properly contained and responsive.</p>
-                        </div>
-                    ),
-                    maxWidth: "lg",
-                },
-                tags: ["container", "responsive", "wrapper"],
-            },
+
+               {
+                 name: "ResizableContainer",
+        component: ResizableContainer,
+        description: "Drag to resize & see breakpoint in real time",
+        props: {
+               children: (
+                 <div>
+                       <h3 style={{ marginBottom:"0.5rem" }}>Resizable Box</h3>
+                       <p>This container can be stretched! Drag the right edge.</p>
+                     </div>
+               ),
+               defaultWidth: 800,
+             },
+            tags: ["container","responsive","interactive","resizable"],
+       },
             {
                 name: "Grid",
                 component: Grid,
@@ -467,6 +479,89 @@ export const componentCategories = [
                 props: { direction: "left", duration: 1.2, delay: 0.3 },
                 tags: ["animation", "slide", "transition"],
             },
+            {
+                name: "BounceIn",
+                component: ({ children, ...props }) => (
+                    <BounceIn {...props}>
+                        <div style={{ padding: "1rem", background: "rgba(34, 197, 94, 0.1)", borderRadius: "8px" }}>
+                            <p style={{ color: "#fef3c7" }}>This content bounces in with energy!</p>
+                        </div>
+                    </BounceIn>
+                ),
+                props: { direction: "up", duration: 0.8, delay: 0.2 },
+                tags: ["animation", "bounce", "entrance"],
+            },
+            {
+                name: "FlipCard",
+                component: FlipCard,
+                props: {
+                    frontContent: (
+                        <div
+                            style={{
+                                padding: "2rem",
+                                textAlign: "center",
+                                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                                borderRadius: "12px",
+                                color: "white",
+                            }}
+                        >
+                            <h3 style={{ margin: "0 0 1rem 0" }}>Front Side</h3>
+                            <p style={{ margin: 0 }}>Click to flip!</p>
+                        </div>
+                    ),
+                    backContent: (
+                        <div
+                            style={{
+                                padding: "2rem",
+                                textAlign: "center",
+                                background: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+                                borderRadius: "12px",
+                                color: "white",
+                            }}
+                        >
+                            <h3 style={{ margin: "0 0 1rem 0" }}>Back Side</h3>
+                            <p style={{ margin: 0 }}>Amazing flip effect!</p>
+                        </div>
+                    ),
+                },
+                tags: ["animation", "flip", "interactive"],
+            },
+            {
+                name: "ParticleSystem",
+                component: ParticleSystem,
+                props: {
+                       initialCount : 50,      // or keep particleCount – 둘 다 OK
+                       mouseMode    : "repel", // "attract" 로 바꿔도 동작
+                       interactive  : true,
+                },
+                tags: ["animation", "particles", "interactive"],
+            },
+            {
+                name: "TypeWriter",
+                component: TypeWriter,
+                props: {
+                    texts: ["Welcome to the component library!", "Explore amazing animations!", "Create something beautiful!"],
+                    speed: 80,
+                    deleteSpeed: 50,
+                },
+                tags: ["animation", "typewriter", "text"],
+            },
+            {
+                name: "MorphingShapes",
+                component: MorphingShapes,
+                props: {
+                    shapes: ["circle", "square", "triangle", "star"],
+                    autoMorph: true,
+                    morphSpeed: 2000,
+                },
+                tags: ["animation", "morph", "shapes"],
+            },
+            {
+                name: "CelestialPet",
+                component: CelestialPet,
+                props: {},
+                tags: ["animation", "interactive", "pet", "celestial"],
+            },
         ],
     },
     {
@@ -480,21 +575,28 @@ export const componentCategories = [
                 component: Tooltip,
                 props: {
                     content: "This is a cosmic tooltip!",
-                    children:             <button
-                        className="cosmic-btn cosmic-btn--secondary cosmic-btn--large"
-                        style={{ padding: "1rem 2rem", fontSize: "1.1rem", fontWeight: "600" }}>
-                        Hover Me</button>,
+                    children: (
+                        <button
+                            className="cosmic-btn cosmic-btn--secondary cosmic-btn--large"
+                            style={{ padding: "1rem 2rem", fontSize: "1.1rem", fontWeight: "600" }}
+                        >
+                            Hover Me
+                        </button>
+                    ),
                 },
                 tags: ["utility", "tooltip", "info"],
             },
             {
-                name: "Badge",
-                component: Badge,
+                name: "Notification",
+                component: Notification,
                 props: {
-                    children: "New Feature",
-                    variant: "success",
+                    items: [
+                        {id: 1, label: " New product launched!", variant: "primary"},
+                        {id: 2, label: " Component page updated", variant: "info"},
+                        {id: 3, label: " All systems green", variant: "success"},
+                    ],
                 },
-                tags: ["utility", "badge", "status"],
+                tags: ["utility", "Notification", "status"],
             },
         ],
     },
@@ -507,11 +609,40 @@ export const componentCategories = [
             {
                 name: "ExperimentalFeature",
                 component: ExperimentalFeature,
+                description: "A highly unstable, yet promising, new component",
                 props: {
                     title: "Quantum Entanglement Module",
                     description: "A highly unstable, yet promising, new component.",
                 },
                 tags: ["experimental", "beta", "future"],
+            },
+            {
+                name: "DynamicTypography",
+                component: DynamicTypography,
+                description: "Interactive typography with stunning animations",
+                props: {},
+                tags: ["experimental", "typography", "animation", "interactive"],
+            },
+            {
+                name: "GravityMode",
+                component: GravityMode,
+                description: "Experience heavy scrolling with realistic gravity physics",
+                props: {},
+                tags: ["experimental", "physics", "gravity", "interactive"],
+            },
+            {
+                name: "DontTouchButton",
+                component: DontTouchButton,
+                description: "A button you absolutely should NOT press... or should you?",
+                props: {},
+                tags: ["experimental", "chaos", "warning", "destructive"],
+            },
+            {
+                name: "ColorInverter",
+                component: ColorInverter,
+                description: "Reality distortion field - transform your visual experience",
+                props: {},
+                tags: ["experimental", "visual", "filter", "distortion"],
             },
         ],
     },
@@ -552,8 +683,8 @@ export const componentCategories = [
                 name: "NotFound",
                 component: NotFound,
                 props: {
-                    title: "404 - Galaxy Not Found",
-                    message: "The page you're looking for has drifted into deep space.",
+                    title: "404 - Page Not Found",
+                    message: "The page you're looking for is not here!",
                     onGoHome: () => console.log("Going home"),
                 },
                 tags: ["404", "not-found", "error"],

@@ -1,0 +1,139 @@
+.bounce-in {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bounce-in--visible {
+    opacity: 1;
+    animation-fill-mode: both;
+}
+
+/* Direction-specific initial states */
+.bounce-in--up {
+    transform: translateY(100px) scale(0.3);
+}
+
+.bounce-in--down {
+    transform: translateY(-100px) scale(0.3);
+}
+
+.bounce-in--left {
+    transform: translateX(100px) scale(0.3);
+}
+
+.bounce-in--right {
+    transform: translateX(-100px) scale(0.3);
+}
+
+/* Bounce animations */
+.bounce-in--up.bounce-in--visible {
+    animation-name: bounceInUp;
+}
+
+.bounce-in--down.bounce-in--visible {
+    animation-name: bounceInDown;
+}
+
+.bounce-in--left.bounce-in--visible {
+    animation-name: bounceInLeft;
+}
+
+.bounce-in--right.bounce-in--visible {
+    animation-name: bounceInRight;
+}
+
+@keyframes bounceInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-30px) scale(1.05);
+    }
+    70% {
+        transform: translateY(10px) scale(0.9);
+    }
+    80% {
+        transform: translateY(-10px) scale(1.02);
+    }
+    90% {
+        transform: translateY(5px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px) scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(30px) scale(1.05);
+    }
+    70% {
+        transform: translateY(-10px) scale(0.9);
+    }
+    80% {
+        transform: translateY(10px) scale(1.02);
+    }
+    90% {
+        transform: translateY(-5px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes bounceInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(-30px) scale(1.05);
+    }
+    70% {
+        transform: translateX(10px) scale(0.9);
+    }
+    80% {
+        transform: translateX(-10px) scale(1.02);
+    }
+    90% {
+        transform: translateX(5px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes bounceInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: translateX(30px) scale(1.05);
+    }
+    70% {
+        transform: translateX(-10px) scale(0.9);
+    }
+    80% {
+        transform: translateX(10px) scale(1.02);
+    }
+    90% {
+        transform: translateX(-5px) scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+}

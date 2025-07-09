@@ -1,0 +1,123 @@
+.morphing-shapes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 15px;
+    min-height: 300px;
+}
+
+.shape-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.morphing-svg {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+}
+
+.morphing-svg.animating {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.morphing-path {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shape-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.shape-name {
+    color: #fef3c7;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    text-shadow: 0 0 10px rgba(254, 243, 199, 0.3);
+}
+
+.shape-progress {
+    width: 120px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+    box-shadow: 0 0 10px currentColor;
+    animation: progressPulse 2s ease-in-out infinite;
+}
+
+.shape-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.shape-button {
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid;
+    border-radius: 20px;
+    color: #fef3c7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.shape-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.shape-button.active {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 15px currentColor;
+}
+
+.morph-status {
+    color: #a855f7;
+    font-size: 0.9rem;
+    text-align: center;
+    opacity: 0.8;
+    margin: 0;
+}
+
+@keyframes progressPulse {
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .morphing-shapes-container {
+        padding: 1.5rem;
+    }
+
+    .shape-controls {
+        gap: 0.3rem;
+    }
+
+    .shape-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
